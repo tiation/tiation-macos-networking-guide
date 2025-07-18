@@ -2,40 +2,28 @@
 
 Welcome to the official documentation wiki for the **Tiation macOS Networking Guide**! This space provides comprehensive resources, tutorials, and guides to make your journey seamless.
 
-## 📦 Sections
+## 📦 Documentation Sections
 
-### 1. Introduction
-- Overview of the project
-- Key features
-- System requirements
+### 🚀 Getting Started
+- **[Installation Guide](Installation.md)** - Complete setup instructions
+- **[FAQ](FAQ.md)** - Frequently asked questions
+- **[Troubleshooting](Troubleshooting.md)** - Problem solving guide
 
-### 2. Setup & Installation
-- Prerequisites
-- Installation guide
-- Configuration details
+### 🌐 Core Features
+- **[IPv6 Tunneling](IPv6-Tunneling.md)** - Hurricane Electric tunnel setup
+- **[Wi-Fi Scanning](Wi-Fi-Scanning.md)** - Network analysis and scanning
+- **[Offline Printing](Offline-Printing.md)** - Printer connectivity methods
 
-### 3. Usage
-- Using the IPv6 tunnel
-- Wi-Fi scanning
-- Printer connectivity
+### 📚 Documentation Overview
 
-### 4. Advanced Configuration
-- Customizing the setup
-- Scripting guidelines
-- Networking tricks
-
-### 5. Troubleshooting
-- Common issues
-- Debugging tips
-- FAQ
-
-### 6. Contributing
-- How to contribute
-- Standards and guidelines
-
-### 7. License
-- Project licensing
-- Legal information
+| Guide | Description | Difficulty |
+|-------|-------------|------------|
+| [Installation](Installation.md) | Setup and configuration | 🟢 Beginner |
+| [IPv6 Tunneling](IPv6-Tunneling.md) | Complete tunneling guide | 🟡 Intermediate |
+| [Wi-Fi Scanning](Wi-Fi-Scanning.md) | Network scanning tools | 🟢 Beginner |
+| [Offline Printing](Offline-Printing.md) | Printer setup methods | 🟢 Beginner |
+| [FAQ](FAQ.md) | Common questions | 🟢 Beginner |
+| [Troubleshooting](Troubleshooting.md) | Problem resolution | 🟡 Intermediate |
 
 ## 🔗 Quick Access
 - [GitHub Repository](https://github.com/tiation/tiation-macos-networking-guide)
