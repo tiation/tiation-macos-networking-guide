@@ -11,6 +11,12 @@
 
 Enterprise-grade networking utilities and guides for macOS systems. This comprehensive toolkit provides professional-grade IPv6 tunnel configuration, Wi-Fi scanning, and offline printer connectivity solutions.
 
+### 🌐 Live Demo & Documentation
+
+- **🎯 Live Site**: [https://tiation.github.io/tiation-macos-networking-guide/](https://tiation.github.io/tiation-macos-networking-guide/)
+- **📚 Wiki Documentation**: [docs/wiki/](docs/wiki/)
+- **🔧 Installation Guide**: [docs/wiki/Installation.md](docs/wiki/Installation.md)
+
 ## 📋 Table of Contents
 
 - [🔧 Installation](#-installation)
