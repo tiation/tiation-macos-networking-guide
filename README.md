@@ -1,297 +1,202 @@
-# 🌐 Tiation macOS Networking Guide
+# tiation-macos-networking-guide
 
 <div align="center">
 
-![Tiation Ecosystem](https://img.shields.io/badge/🔮_TIATION_ECOSYSTEM-tiation_macos_networking_guide-00FFFF?style=for-the-badge&labelColor=0A0A0A&color=00FFFF)
+![tiation-macos-networking-guide Banner](https://img.shields.io/badge/🔮_TIATION_ECOSYSTEM-tiation-macos-networking-guide-00FFFF?style=for-the-badge&labelColor=0A0A0A&color=00FFFF)
 
-**Enterprise-grade solution in the Tiation ecosystem**
+**Enterprise-grade solution: tiation-macos-networking-guide**
 
 *Professional • Scalable • Mission-Driven*
 
-[![🌐_Live_Demo](https://img.shields.io/badge/🌐_Live_Demo-View_Project-00FFFF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-macos-networking-guide)
-[![📚_Documentation](https://img.shields.io/badge/📚_Documentation-Complete-007FFF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-macos-networking-guide)
-[![⚡_Status](https://img.shields.io/badge/⚡_Status-Active_Development-FF00FF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-macos-networking-guide)
-[![📄_License](https://img.shields.io/badge/📄_License-MIT-00FFFF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-macos-networking-guide)
+[![🌐_Live_Demo](https://img.shields.io/badge/🌐_Live_Demo-View_Project-00FFFF?style=flat-square&labelColor=0A0A0A)](https://tiation.github.io/tiation-macos-networking-guide)
+[![📚_Documentation](https://img.shields.io/badge/📚_Documentation-Complete-007FFF?style=flat-square&labelColor=0A0A0A)](https://tiation.github.io/tiation-macos-networking-guide)
+[![🏗️_Architecture](https://img.shields.io/badge/🏗️_Architecture-Diagram-FF00FF?style=flat-square&labelColor=0A0A0A)](https://tiation.github.io/tiation-macos-networking-guide/architecture)
+[![⚡_Status](https://img.shields.io/badge/⚡_Status-Active Development-FF00FF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-macos-networking-guide)
+[![📄_License](https://img.shields.io/badge/📄_License-MIT-00FFFF?style=flat-square&labelColor=0A0A0A)](https://github.com/tiation/tiation-macos-networking-guide/blob/main/LICENSE)
 
 </div>
 
----
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![macOS](https://img.shields.io/badge/macOS-14.0%2B-blue)](https://www.apple.com/macos/)
-[![IPv6](https://img.shields.io/badge/IPv6-Ready-green)](https://ipv6.com/)
-[![Terminal](https://img.shields.io/badge/Terminal-Dark%20Neon-cyan)](https://github.com/tiaastor)
-
-![Tiation Networking Banner](assets/banner.svg)
-
 ## 🚀 Overview
 
-Enterprise-grade networking utilities and guides for macOS systems. This comprehensive toolkit provides professional-grade IPv6 tunnel configuration, Wi-Fi scanning, and offline printer connectivity solutions.
+Enterprise-grade solution: tiation-macos-networking-guide
 
-### 🌐 Live Demo & Documentation
+### ✨ Key Features
 
-- **🎯 Live Site**: [https://tiation.github.io/tiation-macos-networking-guide/](https://tiation.github.io/tiation-macos-networking-guide/)
-- **📚 Wiki Documentation**: [docs/wiki/](docs/wiki/)
-- **🔧 Installation Guide**: [docs/wiki/Installation.md](docs/wiki/Installation.md)
+- 🎯 **Feature 1** - Description 1
+- 🔧 **Feature 2** - Description 2
+- 🌟 **Feature 3** - Description 3
+- 🛡️ **Feature 4** - Description 4
 
-## 📋 Table of Contents
-
-- [🔧 Installation](#-installation)
-- [🌐 IPv6 Tunneling](#-ipv6-tunneling)
-- [📡 Wi-Fi Scanning](#-wi-fi-scanning)
-- [🖨️ Offline Printer Setup](#️-offline-printer-setup)
-- [🏗️ Architecture](#️-architecture)
-- [📊 Monitoring](#-monitoring)
-- [🔒 Security](#-security)
-- [🤝 Contributing](#-contributing)
-- [📄 License](#-license)
-
-## 🔧 Installation
-
-### Prerequisites
-
-- macOS 14.0 or later
-- Terminal access with sudo privileges
-- Network interface management permissions
-
-### Quick Start
-
-```bash
-# Clone the repository
-git clone https://github.com/tiaastor/tiation-macos-networking-guide.git
-cd tiation-macos-networking-guide
-
-# Run the installation script
-./scripts/install.sh
-
-# Verify installation
-./scripts/verify.sh
-```
-
-## 🌐 IPv6 Tunneling
-
-### Hurricane Electric Tunnel Setup
-
-Configure IPv6 connectivity through Hurricane Electric's tunnel broker service.
-
-![IPv6 Tunnel Architecture](assets/ipv6-tunnel-architecture.svg)
-
-#### 1. Network Analysis
-
-```bash
-# Check current IPv6 configuration
-./scripts/ipv6-analysis.sh
-
-# Sample output analysis
-ifconfig | grep -A 5 -B 5 inet6
-netstat -rn -f inet6
-```
-
-#### 2. Public IP Discovery
-
-```bash
-# Discover your public IPv4 endpoint
-curl -s https://ipv4.icanhazip.com
-```
-
-#### 3. Tunnel Configuration
-
-```bash
-# Configure Hurricane Electric tunnel
-sudo ifconfig gif0 create
-sudo ifconfig gif0 tunnel {{YOUR_IPV4}} {{HE_SERVER_IPV4}}
-sudo ifconfig gif0 inet6 {{CLIENT_IPV6}} {{SERVER_IPV6}} prefixlen 128
-sudo route -n add -inet6 default {{SERVER_IPV6}}
-```
-
-#### 4. Connectivity Testing
-
-```bash
-# Test IPv6 connectivity
-ping6 -c 3 2001:4860:4860::8888
-ping6 -c 3 google.com
-```
-
-### Tunnel Architecture Diagram
-
-```
-┌─────────────────┐     IPv4 Tunnel     ┌─────────────────┐
-│   Your Mac      │◄──────────────────►│ HE Server       │
-│ IPv4: 49.x.x.x  │                    │ IPv4: 216.x.x.x │
-│ IPv6: 2001:x:x  │                    │ IPv6: 2001:x:x  │
-└─────────────────┘                    └─────────────────┘
-        │                                       │
-        └─────────► IPv6 Internet ◄─────────────┘
-```
-
-## 📡 Wi-Fi Scanning
-
-### Airport Command Installation
-
-The `airport` utility provides comprehensive Wi-Fi network scanning capabilities.
-
-#### Installation Steps
-
-```bash
-# Install airport command
-sudo ln -sf /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
-
-# Verify installation
-airport --version
-```
-
-#### Network Scanning
-
-```bash
-# Basic network scan
-airport -s
-
-# Detailed network information
-system_profiler SPAirPortDataType
-
-# List hardware ports
-networksetup -listallhardwareports
-```
-
-### Modern Wi-Fi Diagnostics
-
-```bash
-# Use modern wdutil command
-sudo wdutil info
-sudo wdutil diagnose -q -f /tmp/wifi-diagnostics
-```
-
-## 🖨️ Offline Printer Setup
-
-### Wi-Fi Direct Connection
-
-Connect to printers without internet connectivity using Wi-Fi Direct.
-
-![Printer Connection Methods](assets/printer-connections.svg)
-
-#### 1. Printer Discovery
-
-```bash
-# Scan for available printers
-system_profiler SPAirPortDataType | grep -i "direct\|printer"
-
-# List current printers
-lpstat -p
-```
-
-#### 2. Wi-Fi Direct Connection
-
-```bash
-# Connect to printer's Wi-Fi Direct network
-networksetup -setairportnetwork en0 "DIRECT-CB-HP ENVY Photo 6200"
-
-# Verify connection
-ping 192.168.1.1  # Common printer IP
-```
-
-#### 3. Printer Configuration
-
-```bash
-# Add printer via command line
-sudo lpadmin -p PrinterName -E -v ipp://192.168.1.1/ipp/print
-
-# Set as default printer
-sudo lpadmin -d PrinterName
-```
-
-### Connection Methods
-
-```
-┌─────────────┐
-│  Your Mac   │
-│             │
-└─────┬───────┘
-      │
-┌─────┴─────┐
-│ Connection │
-│  Methods   │
-└─────┬─────┘
-      │
-┌─────┴─────────────────────────────────┐
-│  USB  │  Wi-Fi Direct  │  Bluetooth  │
-└───────┴────────────────┴─────────────┘
-      │           │            │
-┌─────┴─────┐ ┌───┴───┐ ┌─────┴─────┐
-│  Printer  │ │Printer│ │  Printer  │
-│ (Direct)  │ │(Adhoc)│ │(Wireless) │
-└───────────┘ └───────┘ └───────────┘
-```
+---
 
 ## 🏗️ Architecture
 
-### Network Stack Overview
+![Architecture Diagram](assets/architecture/tiation-macos-networking-guide-architecture.svg)
 
+### System Components
+
+```mermaid
+graph TB
+    A[Component 1] --> B[Component 2]
+    B --> C[Component 3]
+    C --> D[Component 4]
+    
+    style A fill:#00ffff,stroke:#ff00ff,stroke-width:2px
+    style B fill:#ff00ff,stroke:#00ffff,stroke-width:2px
+    style C fill:#00ffff,stroke:#ff00ff,stroke-width:2px
+    style D fill:#ff00ff,stroke:#00ffff,stroke-width:2px
 ```
-┌─────────────────────────────────────────────────────────┐
-│                Application Layer                        │
-├─────────────────────────────────────────────────────────┤
-│                Transport Layer                          │
-├─────────────────────────────────────────────────────────┤
-│         Network Layer (IPv4/IPv6)                      │
-├─────────────────────────────────────────────────────────┤
-│              Data Link Layer                           │
-├─────────────────────────────────────────────────────────┤
-│               Physical Layer                           │
-└─────────────────────────────────────────────────────────┘
-```
 
-### Component Integration
+### Technology Stack
 
-- **IPv6 Tunnel Management**: Automated tunnel configuration and monitoring
-- **Wi-Fi Diagnostics**: Comprehensive network analysis tools
-- **Printer Management**: Enterprise-grade offline printing solutions
-- **Security Monitoring**: Network security and intrusion detection
+- **Frontend**: Modern Frontend
+- **Backend**: Scalable Backend
+- **Database**: Database
+- **Infrastructure**: Infrastructure
 
-## 📊 Monitoring
+---
 
-### Network Performance Metrics
+## 📋 Table of Contents
+
+- [Features](#-features)
+- [Quick Start](#-quick-start)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Documentation](#-documentation)
+- [Screenshots](#-screenshots)
+- [FAQ](#-faq)
+- [Contributing](#-contributing)
+- [Support](#-support)
+- [License](#-license)
+- [About Tiation](#-about-tiation)
+
+---
+
+## ✨ Features
+
+{{FEATURES_LIST}}
+
+---
+
+## 🏃‍♂️ Quick Start
 
 ```bash
-# Network interface statistics
-netstat -i
+# Clone the repository
+git clone https://github.com/tiation/tiation-macos-networking-guide.git
+cd tiation-macos-networking-guide
 
-# IPv6 routing table monitoring
-netstat -rn -f inet6
+# Install dependencies
+{{INSTALL_COMMANDS}}
 
-# Wi-Fi signal strength monitoring
-while true; do
-    system_profiler SPAirPortDataType | grep -A 5 "Signal / Noise"
-    sleep 5
-done
+# Run the application
+{{RUN_COMMANDS}}
 ```
 
-### Automated Health Checks
+---
 
-```bash
-# Run comprehensive network health check
-./scripts/health-check.sh
+## 📦 Installation
 
-# Generate network report
-./scripts/generate-report.sh
-```
+### Prerequisites
 
-## 🔒 Security
+{{PREREQUISITES}}
 
-### Network Security Best Practices
+### Installation Steps
 
-1. **Tunnel Encryption**: All IPv6 traffic is encrypted through the tunnel
-2. **Wi-Fi Security**: Use WPA3 when available, avoid open networks
-3. **Printer Security**: Secure direct connections with proper authentication
-4. **Access Control**: Implement network-level access controls
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/tiation/tiation-macos-networking-guide.git
+   cd tiation-macos-networking-guide
+   ```
 
-### Security Monitoring
+2. **Install dependencies**
+   ```bash
+   {{DETAILED_INSTALL_COMMANDS}}
+   ```
 
-```bash
-# Monitor network connections
-sudo netstat -an | grep ESTABLISHED
+3. **Configuration**
+   ```bash
+   {{CONFIG_COMMANDS}}
+   ```
 
-# Check for suspicious activity
-sudo tcpdump -i en0 -n
-```
+---
+
+## 🎯 Usage
+
+### Basic Usage
+
+{{BASIC_USAGE}}
+
+### Advanced Usage
+
+{{ADVANCED_USAGE}}
+
+### Examples
+
+{{USAGE_EXAMPLES}}
+
+---
+
+## 📚 Documentation
+
+- **[User Guide](docs/user-guide.md)** - Complete user documentation
+- **[API Reference](docs/api-reference.md)** - Technical API documentation
+- **[Architecture](docs/architecture.md)** - System architecture overview
+- **[Deployment Guide](docs/deployment.md)** - Production deployment instructions
+- **[Developer Guide](docs/developer-guide.md)** - Development setup and guidelines
+
+### Live Documentation
+
+Visit our [GitHub Pages site](https://tiation.github.io/tiation-macos-networking-guide) for interactive documentation.
+
+---
+
+## 📸 Screenshots
+
+<div align="center">
+  <img src="assets/screenshots/main-interface.png" alt="Main Interface" width="800">
+  <p><em>Main application interface</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/screenshots/dashboard.png" alt="Dashboard" width="800">
+  <p><em>Analytics dashboard</em></p>
+</div>
+
+---
+
+## ❓ FAQ
+
+### General Questions
+
+**Q: What makes this solution enterprise-grade?**
+A: Our solution includes comprehensive security, scalability, monitoring, and enterprise integration features with professional support.
+
+**Q: Is this compatible with existing systems?**
+A: Yes, we provide extensive API and integration capabilities for seamless system integration.
+
+**Q: What support options are available?**
+A: We offer community support through GitHub Issues and professional enterprise support for commercial users.
+
+### Technical Questions
+
+**Q: What are the system requirements?**
+A: {{SYSTEM_REQUIREMENTS}}
+
+**Q: How do I handle large scale deployments?**
+A: See our [Deployment Guide](docs/deployment.md) for enterprise-scale deployment strategies.
+
+**Q: Are there any security considerations?**
+A: Yes, please review our [Security Guide](docs/security.md) for comprehensive security best practices.
+
+### Troubleshooting
+
+**Q: Common installation issues**
+A: Check our [Troubleshooting Guide](docs/troubleshooting.md) for solutions to common problems.
+
+**Q: Performance optimization**
+A: Refer to our [Performance Guide](docs/performance.md) for optimization strategies.
+
+---
 
 ## 🤝 Contributing
 
@@ -299,36 +204,35 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 
 ### Development Setup
 
-```bash
-# Fork and clone the repository
-git clone https://github.com/yourusername/tiation-macos-networking-guide.git
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
 
-# Create feature branch
-git checkout -b feature/new-feature
+### Code of Conduct
 
-# Make changes and commit
-git commit -m "Add new feature"
-
-# Push and create pull request
-git push origin feature/new-feature
-```
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🔗 Related Projects
-
-- [Tiation Terminal Workflows](https://github.com/tiaastor/tiation-terminal-workflows)
-- [Tiation Docker Debian](https://github.com/tiaastor/tiation-docker-debian)
-- [Tiation AI Platform](https://github.com/tiaastor/tiation-ai-platform)
+Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing.
 
 ---
 
-<div align="center">
-  <p>Built with ❤️ by <a href="https://github.com/tiaastor">Tiation</a></p>
-  <p>⭐ Star this repository if it helped you!</p>
-</div>
+## 🆘 Support
+
+### Community Support
+
+- **GitHub Issues**: [Report bugs or request features](https://github.com/tiation/tiation-macos-networking-guide/issues)
+- **Discussions**: [Join community discussions](https://github.com/tiation/tiation-macos-networking-guide/discussions)
+- **Documentation**: [Browse our documentation](https://tiation.github.io/tiation-macos-networking-guide)
+
+### Enterprise Support
+
+For enterprise customers, we offer:
+- Priority support
+- Custom development
+- Training and consultation
+- SLA guarantees
+
+Contact us at [tiatheone@protonmail.com](mailto:tiatheone@protonmail.com)
 
 ---
 
@@ -336,23 +240,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 This repository is part of the Tiation ecosystem. Explore related projects:
 
-- [🌟 TiaAstor](https://github.com/TiaAstor/TiaAstor) - Personal brand and story
+- [🌟 Tiation Platform](https://github.com/tiation/tiation-ai-platform) - Enterprise AI platform
+- [🤖 AI Agents](https://github.com/tiation/tiation-ai-agents) - Intelligent automation
+- [⚡ Terminal Workflows](https://github.com/tiation/tiation-terminal-workflows) - Developer tools
+- [🐳 Docker Solutions](https://github.com/tiation/tiation-docker-debian) - Container orchestration
+- [📝 CMS](https://github.com/tiation/tiation-cms) - Content management system
 - [🐰 ChaseWhiteRabbit NGO](https://github.com/tiation/tiation-chase-white-rabbit-ngo) - Social impact initiatives
 - [🏗️ Infrastructure](https://github.com/tiation/tiation-rigger-infrastructure) - Enterprise infrastructure
-- [🤖 AI Agents](https://github.com/tiation/tiation-ai-agents) - Intelligent automation
-- [📝 CMS](https://github.com/tiation/tiation-cms) - Content management system
-- [⚡ Terminal Workflows](https://github.com/tiation/tiation-terminal-workflows) - Developer tools
-
----
-*Built with 💜 by the Tiation team*
----
-
-## 📞 Support & Contact
-
-- 📧 **Enterprise Support**: [tiatheone@protonmail.com](mailto:tiatheone@protonmail.com)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/tiaastor/tiation-macos-networking-guide/issues)
-- 📖 **Documentation**: [Wiki](https://github.com/tiaastor/tiation-macos-networking-guide/wiki)
-- 🔗 **GitHub**: [Repository](https://github.com/tiaastor/tiation-macos-networking-guide)
 
 ---
 
@@ -362,17 +256,33 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🔗 Related Projects
+## 🌟 About Tiation
 
-- [Tiation Terminal Workflows](https://github.com/tiaastor/tiation-terminal-workflows)
-- [Tiation Docker Debian](https://github.com/tiaastor/tiation-docker-debian)
-- [Tiation AI Platform](https://github.com/tiaastor/tiation-ai-platform)
-- [Tiation CMS](https://github.com/tiaastor/tiation-cms)
+**Tiation** is a leading provider of enterprise-grade software solutions, specializing in automation, productivity, and system integration tools. Our mission is to empower organizations with cutting-edge technology that drives efficiency and innovation.
+
+### Our Solutions
+
+- **Automation Platform**: Comprehensive business process automation
+- **Developer Tools**: Professional development and deployment tools
+- **Enterprise Integration**: Seamless system integration solutions
+- **Security Framework**: Advanced security and compliance tools
+
+### Connect With Us
+
+- **Website**: [https://github.com/tiation](https://github.com/tiation)
+- **GitHub**: [https://github.com/tiation](https://github.com/tiation)
+- **LinkedIn**: [Tiation Company](https://linkedin.com/company/tiation)
+- **Twitter**: [@TiationTech](https://twitter.com/TiationTech)
 
 ---
 
 <div align="center">
-  **⭐ Star this repository if you find it helpful! ⭐**
-  
-  <p><strong>Built with ❤️ and enterprise-grade standards by <a href="https://github.com/tiaastor">Tiation</a></strong></p>
+  <p>
+    <strong>Built with ❤️ by the Tiation Team</strong>
+  </p>
+  <p>
+    <a href="https://github.com/tiation">
+      <img src="https://img.shields.io/badge/Powered%20by-Tiation-cyan.svg" alt="Powered by Tiation">
+    </a>
+  </p>
 </div>
