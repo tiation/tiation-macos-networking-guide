@@ -21,7 +21,7 @@
 [![IPv6](https://img.shields.io/badge/IPv6-Ready-green)](https://ipv6.com/)
 [![Terminal](https://img.shields.io/badge/Terminal-Dark%20Neon-cyan)](https://github.com/tiaastor)
 
-![Tiation Networking Banner](assets/banner.png)
+![Tiation Networking Banner](assets/banner.svg)
 
 ## 🚀 Overview
 
@@ -73,7 +73,7 @@ cd tiation-macos-networking-guide
 
 Configure IPv6 connectivity through Hurricane Electric's tunnel broker service.
 
-![IPv6 Tunnel Architecture](assets/ipv6-tunnel-architecture.png)
+![IPv6 Tunnel Architecture](assets/ipv6-tunnel-architecture.svg)
 
 #### 1. Network Analysis
 
@@ -166,7 +166,7 @@ sudo wdutil diagnose -q -f /tmp/wifi-diagnostics
 
 Connect to printers without internet connectivity using Wi-Fi Direct.
 
-![Printer Connection Methods](assets/printer-connections.png)
+![Printer Connection Methods](assets/printer-connections.svg)
 
 #### 1. Printer Discovery
 
